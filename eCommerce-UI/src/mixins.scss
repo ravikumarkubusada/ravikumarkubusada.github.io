@@ -1,0 +1,5 @@
+@import "variables.scss";
+
+@mixin primary-button {
+  background-color: $site-blue-color;
+}
