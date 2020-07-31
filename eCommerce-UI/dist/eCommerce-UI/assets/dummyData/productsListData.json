@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Prduct- 1",
+        "price": 123,
+        "currency": "INR",
+        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "quantity": 10,
+        "selectedQuantity": 0,
+        "addedToCart": false
+    },
+    {
+        "id": 2,
+        "name": "Prduct- 2",
+        "price": 222,
+        "currency": "INR",
+        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "quantity": 10,
+        "selectedQuantity": 0,
+        "addedToCart": false
+    },
+    {
+        "id": 3,
+        "name": "Prduct- 1",
+        "price": 123,
+        "currency": "INR",
+        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "quantity": 10,
+        "selectedQuantity": 0,
+        "addedToCart": false
+    },
+    {
+        "id": 4,
+        "name": "Prduct- 2",
+        "price": 222,
+        "currency": "INR",
+        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "quantity": 10,
+        "selectedQuantity": 0,
+        "addedToCart": false
+    }
+]
