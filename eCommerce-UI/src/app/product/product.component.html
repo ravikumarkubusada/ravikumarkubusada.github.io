@@ -1,1 +1,15 @@
-{{product.name}}
+<div class="card">
+  <img src="{{product.thumbNailPath}}" alt="{{product.name}}">
+  <h3>{{product.name}}</h3>
+  <p class="price">{{product.price}} {{product.currency}}</p>
+  <div *ngIf="product.quantity>0 else outOfStock">
+    <p *ngIf="!(product.addedToCart && product.selectedQuantity > 0) else productAdded"><button class="addToCart" (click)="addToCart(product)">Add to Cart</button></p>
+  </div>
+
+  <ng-template #productAdded>
+    <p><button class="addedToCart">Added to Cart</button></p>
+  </ng-template>
+  <ng-template #outOfStock>
+  <p><button class="outOfStock">Out Of Stock</button></p>
+</ng-template>
+</div>

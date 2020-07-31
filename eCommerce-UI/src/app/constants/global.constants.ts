@@ -3,7 +3,7 @@ export const GlobalConstants = {
     siteTitle: 'Bootstrap-cart',
     addToCart: 'Add to cart',
     priceFilter: 'Price Filter',
-    sorting: 'Sorting',
+    sorting: 'SortBy: ',
     price: 'Price: ',
 
     page: {

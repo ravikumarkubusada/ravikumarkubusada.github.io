@@ -2,3 +2,24 @@
 
 @import "variables.scss";
 @import "mixins.scss";
+
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1400px;
+  }
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.btn-primary {
+  background: $site-blue-color;
+}

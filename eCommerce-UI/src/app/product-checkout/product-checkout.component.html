@@ -1,1 +1,62 @@
-<p>product-checkout works!</p>
+<div *ngIf="selectedProducts.length; else showCartEmptyTemplate">
+  <div class="row">
+    <div class="col-md-9">
+      <table>
+        <thead>
+          <tr>
+            <td>Product Name</td>
+            <td>Quantity</td>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of selectedProducts">
+            <td>{{product.name}}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" type="button" (click)="removeQuantity(product)">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+              </button>
+              <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10">
+              <button class="btn btn-sm btn-success" type="button" (click)="addQuantity(product)">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3">
+      summary
+      <table>
+        <tr *ngFor="let product of selectedProducts;">
+          <td>{{product.name}}</td>
+          <td>X {{product.selectedQuantity}}</td>
+          <td>:{{product.price * product.selectedQuantity}}</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td>{{total}}</td>
+        </tr>
+        <tr>
+          <td>Discunt </td>
+          <td></td>
+          <td>:10%</td>
+        </tr>
+        <tr>
+          <td>SUB TOTAL</td>
+          <td></td>
+          <td>{{(total/10)*100}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <button class="btn btn-lg btn-primary float-left" > Continue Shopping </button>
+  <button class="btn btn-lg btn-info float-right"> Checkout </button>
+</div>
+
+
+<ng-template #showCartEmptyTemplate>
+  <div class="cart-empty">
+    <h1>Ooops Noting Intresting ???</h1>
+    <button type="button" class="btn btn-primary" routerLink=""> Click Out our Top recommendation !</button>
+  </div>
+</ng-template>
