@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductModel } from '../models/product.model';
-import { ApiCallService } from '../services/api/api-call.service';
 import { ManageProductsService } from '../services/products/manage-products.service';
+import { RouteConstants } from '../constants/route.constants';
 
 @Component({
   selector: 'app-product-checkout',
@@ -9,16 +9,25 @@ import { ManageProductsService } from '../services/products/manage-products.serv
   styleUrls: ['./product-checkout.component.scss']
 })
 export class ProductCheckoutComponent implements OnInit {
+  routeConstants = RouteConstants;
   selectedProducts = [];
   total: number = 0;
-  subTotal: number = 0;
+  /**
+   *Creates an instance of ProductCheckoutComponent.
+   * @param {ManageProductsService} manageProductSvc
+   * @memberof ProductCheckoutComponent
+   */
   constructor(private manageProductSvc: ManageProductsService) { }
 
   ngOnInit(): void {
     this.getAllTheSelectedProducts();
   }
 
-
+  /**
+   *
+   *
+   * @memberof ProductCheckoutComponent
+   */
   getAllTheSelectedProducts() {
     const products = this.manageProductSvc.getUpdatedProducts();
     products.forEach(product => {
@@ -42,16 +51,17 @@ export class ProductCheckoutComponent implements OnInit {
 
   }
   removeQuantity(product: ProductModel) {
+
     if (product.selectedQuantity === 1) {
       if (this.selectedProducts.length === 1)
         this.selectedProducts = [];
       else {
         this.selectedProducts = this.selectedProducts.filter(o => {
-          return (o.id == product.id);
+          return !(o.id == product.id);
         });
       }
     }
-
+    console.log(JSON.stringify(this.selectedProducts));
     this.manageProductSvc.removeFromCart(product);
     this.calculateSum();
   }
