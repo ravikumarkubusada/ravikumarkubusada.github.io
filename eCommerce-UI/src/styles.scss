@@ -13,6 +13,16 @@
   .container-xl {
     max-width: 1400px;
   }
+
+  .mr-top-6 {
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 720px) {
+  .mr-top-6 {
+    margin-top: 25%;
+  }
 }
 
 .row {
@@ -33,8 +43,4 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
-}
-
-.mr-top-6 {
-  margin-top: 6%;
 }

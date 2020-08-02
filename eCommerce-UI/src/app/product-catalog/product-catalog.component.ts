@@ -41,7 +41,7 @@ export class ProductCatalogComponent implements OnInit {
     this.productList = this.getAllTheProducts();
 
     this.productList = this.productList.filter(o => {
-      const res = (o.name.match(searchText));
+      const res = (o.name.toLowerCase().match(searchText.toLowerCase()));
       return (res != null && res.length > 0) ? true : false;
     });
 

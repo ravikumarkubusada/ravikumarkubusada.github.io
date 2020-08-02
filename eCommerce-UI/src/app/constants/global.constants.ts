@@ -1,6 +1,6 @@
 export const GlobalConstants = {
-    siteName: 'Bootstrap-cart',
-    siteTitle: 'Bootstrap-cart',
+    siteName: 'BikerZone',
+    siteTitle: 'BikerZone',
     addToCart: 'Add to cart',
     priceFilter: 'Price Filter',
     sorting: 'SortBy: ',
