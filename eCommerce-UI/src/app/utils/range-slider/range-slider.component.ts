@@ -9,13 +9,13 @@ import { GlobalConstants } from 'src/app/constants/global.constants';
 export class RangeSliderComponent implements OnInit {
 
   GlobalConstants = GlobalConstants;
+  range = 1000;
 
-  @Output() myRange = new EventEmitter();
+  @Output() myRange = new EventEmitter<number>();
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   updateRange(range: any) {
     this.myRange.emit(range);

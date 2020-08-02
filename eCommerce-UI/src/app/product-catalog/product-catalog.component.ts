@@ -47,8 +47,9 @@ export class ProductCatalogComponent implements OnInit {
 
   }
 
-  filterProductsWithPrice(toRange) {
-    this.productList.filter(o => {
+  filterProductsWithPrice(toRange: number) {
+    this.productList = this.getAllTheProducts();
+    this.productList = this.productList.filter(o => {
       return (o.price <= toRange) ? true : false;
     })
   }
