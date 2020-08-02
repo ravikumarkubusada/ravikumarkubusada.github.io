@@ -6,12 +6,14 @@ import { ProductCheckoutComponent } from './product-checkout/product-checkout.co
 
 const routes: Routes = [
   { path: RouteConstants.routeToProductCatalog, component: ProductCatalogComponent, pathMatch: 'full' },
+  { path: RouteConstants.routeToProductCatalogWithsearchTxt, component: ProductCatalogComponent },
+  { path: RouteConstants.routeToProductCatalog, component: ProductCatalogComponent },
   { path: RouteConstants.routeToProductCheckout, component: ProductCheckoutComponent },
   { path: '**', redirectTo: RouteConstants.routeToProductCatalog },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

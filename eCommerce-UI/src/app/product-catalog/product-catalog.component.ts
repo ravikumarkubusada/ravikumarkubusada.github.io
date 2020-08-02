@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiCallService } from '../services/api/api-call.service';
-import { ProductModel } from '../models/product.model';
 import { GlobalConstants } from './../constants/global.constants';
 import { ManageProductsService } from '../services/products/manage-products.service';
+import { ActivatedRoute, Route } from '@angular/router';
+import { RouteConstants } from '../constants/route.constants';
+
 
 @Component({
   selector: 'app-product-catalog',
@@ -11,16 +13,44 @@ import { ManageProductsService } from '../services/products/manage-products.serv
 })
 export class ProductCatalogComponent implements OnInit {
   globalConstants = GlobalConstants;
-  productList: [ProductModel];
+  routeConstants = RouteConstants;
+  productList = [];
   sortBy = 1;
 
   sortingDropDownList = [];
 
-  constructor(private apiCall: ApiCallService, private manageProducts: ManageProductsService) { }
+  constructor(private apiCall: ApiCallService,
+    private manageProducts: ManageProductsService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.sortingDropDownList = this.globalConstants.sortingDropDownList;
-    this.getAllTheProducts();
+
+    this.activatedRoute.params.subscribe(res => {
+      const searchText = res['searchtext'];
+      if (searchText != undefined && searchText != null && searchText.length > 0) {
+        this.filterProductsTxt(searchText);
+      } else {
+        this.getAllTheProducts();
+      }
+    });
+  }
+
+  filterProductsTxt(searchText: any) {
+    this.productList = this.getAllTheProducts();
+
+    this.productList = this.productList.filter(o => {
+      const res = (o.name.match(searchText));
+      return (res != null && res.length > 0) ? true : false;
+    });
+
+  }
+
+  filterProductsWithPrice(toRange) {
+    this.productList.filter(o => {
+      return (o.price <= toRange) ? true : false;
+    })
   }
 
   getAllTheProducts() {
@@ -37,13 +67,6 @@ export class ProductCatalogComponent implements OnInit {
 
   addProductToCart(product) {
     this.manageProducts.addToCart(product);
-  }
-
-  updateRange(toRange) {
-    this.productList = this.getAllTheProducts();
-    this.productList.filter(o => {
-      return (o.price <= toRange) ? true : false;
-    })
   }
 
 }
