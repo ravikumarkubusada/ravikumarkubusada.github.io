@@ -1,30 +1,41 @@
 [
     {
         "id": 1,
-        "name": "Prduct-1",
+        "name": "Tank Bag/Pouch",
         "price": 123,
         "currency": "INR",
-        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
-        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "photoPath": "assets/dummyData/productImg/Tank_Bag.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/Tank_Bag.jpg",
         "quantity": 10,
         "selectedQuantity": 0,
         "addedToCart": false
     },
     {
         "id": 2,
-        "name": "Prduct-2",
+        "name": "Riding Boots",
         "price": 222,
         "currency": "INR",
-        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
-        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "photoPath": "assets/dummyData/productImg/Riding_Boots.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/Riding_Boots.jpg",
         "quantity": 10,
         "selectedQuantity": 0,
         "addedToCart": false
     },
     {
         "id": 3,
-        "name": "Prduct-3",
+        "name": "Mobile Holder",
         "price": 323,
+        "currency": "INR",
+        "photoPath": "assets/dummyData/productImg/Mobile_Holder.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/Mobile_Holder.jpg",
+        "quantity": 0,
+        "selectedQuantity": 0,
+        "addedToCart": false
+    },
+    {
+        "id": 4,
+        "name": "Jeans Riding pant",
+        "price": 622,
         "currency": "INR",
         "photoPath": "assets/dummyData/productImg/jeans3.jpg",
         "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
@@ -33,12 +44,12 @@
         "addedToCart": false
     },
     {
-        "id": 4,
-        "name": "Prduct-4",
+        "id": 5,
+        "name": "Gloves for Motor Cycle",
         "price": 422,
         "currency": "INR",
-        "photoPath": "assets/dummyData/productImg/jeans3.jpg",
-        "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
+        "photoPath": "assets/dummyData/productImg/Gloves.jpg",
+        "thumbNailPath": "assets/dummyData/productImg/Gloves.jpg",
         "quantity": 10,
         "selectedQuantity": 0,
         "addedToCart": false
