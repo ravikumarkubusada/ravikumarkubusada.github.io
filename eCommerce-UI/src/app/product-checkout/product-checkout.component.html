@@ -6,12 +6,12 @@
           <tr *ngFor="let product of selectedProducts" class="product-items-block">
             <td>{{ product.name }}</td>
             <td>
-              <button class="btn btn-sm btn-outline-warning" type="button" (click)="removeQuantity(product)"
+              <button class="btn btn-sm btn-outline-primary" type="button" (click)="removeQuantity(product)"
               [disabled] = "product.selectedQuantity ==0">
                 <i class="fa fa-minus" aria-hidden="true"></i>
               </button>
               <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10" />
-              <button class="btn btn-sm btn-outline-warning" type="button" (click)="addQuantity(product)" [disabled]="product.quantity == 0">
+              <button class="btn btn-sm btn-outline-primary" type="button" (click)="addQuantity(product)" [disabled]="product.quantity == 0">
                 <i class="fa fa-plus" aria-hidden="true"></i>
               </button>
             </td>
@@ -42,7 +42,7 @@
           <td></td>
           <td>:10%</td>
         </tr>
-        <tr class="underlined">
+        <tr>
           <td>SUB TOTAL</td>
           <td></td>
           <td>{{ total - 0.1 * total }}</td>
@@ -51,10 +51,10 @@
     </div>
   </div>
   <div class="flexi-container">
-    <button class="btn btn-lg btn-checkout" routerLink="{{routeConstants.routeToProductCatalog}}">
+    <button class="btn btn-lg btn-primary" routerLink="{{routeConstants.routeToProductCatalog}}">
       Continue Shopping
     </button>
-    <button class="btn btn-lg btn-checkout">
+    <button class="btn btn-lg btn-primary">
       Checkout
     </button>
   </div>
@@ -62,8 +62,8 @@
 
 <ng-template #showCartEmptyTemplate>
   <div class="text-center">
-    <h1>Ooops Noting Intresting ???</h1>
-    <button type="button" class="btn btn-primary" routerLink="">
+    <h1>Ooops, Noting Intresting ???</h1>
+    <button type="button" class="btn btn-primary" routerLink="{{routeConstants.routeToProductCatalog}}">
       Click Out our Top recommendation !
     </button>
   </div>

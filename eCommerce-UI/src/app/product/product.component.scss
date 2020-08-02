@@ -1,4 +1,5 @@
 @import "./../../variables.scss";
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -6,9 +7,11 @@
   text-align: center;
   font-family: arial;
 }
+
 img {
   height: 300px;
 }
+
 .price {
   color: grey;
   font-size: 22px;
@@ -19,23 +22,31 @@ img {
   outline: 0;
   padding: 12px;
   color: white;
-
   text-align: center;
   cursor: pointer;
   width: 100%;
   font-size: 18px;
 }
 
+.card:hover {
+  transition: .2s all ease-in-out;
+  box-shadow: 0 11px 19px 0 rgba(4, 31, 99, .15);
+  transform: translateY(-4px);
+}
+
 .addToCart {
   background-color: $site-blue-color;
 }
+
 .addedToCart {
   background-color: #f6b73c;
+  color: black !important;
 }
+
 .outOfStock {
   background-color: yellowgreen;
 }
 
 .card button:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }

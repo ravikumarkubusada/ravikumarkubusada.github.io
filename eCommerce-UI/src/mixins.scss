@@ -4,11 +4,7 @@
   width: 30vw;
   display: flex;
   justify-content: space-between;
-  border: 4px black solid;
+  border: 4px #2d5775 solid;
   margin-bottom: 8px;
   padding: 10px;
-}
-
-@mixin golden-border {
-  border: 1px solid gold;
 }
