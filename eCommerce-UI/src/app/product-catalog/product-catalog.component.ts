@@ -10,20 +10,16 @@ import { ManageProductsService } from '../services/products/manage-products.serv
   styleUrls: ['./product-catalog.component.scss']
 })
 export class ProductCatalogComponent implements OnInit {
-  GlobalConstants = GlobalConstants;
+  globalConstants = GlobalConstants;
   productList: [ProductModel];
   sortBy = 1;
-  count = 0;
 
-  sortingDropDownList = [
-    { "name": "Name Asc", "value": 1 },
-    { "name": "Name Desc", "value": 2 },
-    { "name": "Price HTL", "value": 3 },
-    { "name": "Price LTH", "value": 4 }]
+  sortingDropDownList = [];
 
   constructor(private apiCall: ApiCallService, private manageProducts: ManageProductsService) { }
 
   ngOnInit(): void {
+    this.sortingDropDownList = this.globalConstants.sortingDropDownList;
     this.getAllTheProducts();
   }
 
@@ -32,16 +28,14 @@ export class ProductCatalogComponent implements OnInit {
 
     if (!this.productList.length) {
       this.apiCall.getApiCall('assets/dummyData/productsListData.json').subscribe(res => {
-        sessionStorage.setItem('db', JSON.stringify(res));
-        this.productList = this.manageProducts.getUpdatedProducts();
+        this.productList = res;
+        this.manageProducts.storeProducts(res);
       });
     }
     return this.productList;
   }
 
   addProductToCart(product) {
-    this.count++;
-    this.manageProducts.updateCartCount(this.count);
     this.manageProducts.addToCart(product);
   }
 

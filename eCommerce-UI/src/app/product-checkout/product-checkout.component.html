@@ -1,21 +1,16 @@
 <div *ngIf="selectedProducts.length; else showCartEmptyTemplate">
-  <div class="row">
-    <div class="col-md-9">
+  <div class="flexi-container">
+    <div>
       <table>
-        <thead>
-          <tr>
-            <td>Product Name</td>
-            <td>Quantity</td>
-        </thead>
         <tbody>
-          <tr *ngFor="let product of selectedProducts">
-            <td>{{product.name}}</td>
+          <tr *ngFor="let product of selectedProducts" class="product-items-block">
+            <td>{{ product.name }}</td>
             <td>
-              <button class="btn btn-sm btn-danger" type="button" (click)="removeQuantity(product)">
+              <button class="btn btn-sm btn-outline-warning" type="button" (click)="removeQuantity(product)">
                 <i class="fa fa-minus" aria-hidden="true"></i>
               </button>
-              <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10">
-              <button class="btn btn-sm btn-success" type="button" (click)="addQuantity(product)">
+              <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10" />
+              <button class="btn btn-sm btn-outline-warning" type="button" (click)="addQuantity(product)">
                 <i class="fa fa-plus" aria-hidden="true"></i>
               </button>
             </td>
@@ -23,40 +18,52 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-3">
-      summary
+    <div class="bordered">
       <table>
-        <tr *ngFor="let product of selectedProducts;">
-          <td>{{product.name}}</td>
-          <td>X {{product.selectedQuantity}}</td>
-          <td>:{{product.price * product.selectedQuantity}}</td>
+        <thead>
+          <tr class="product-head-block">
+            <td>Summary</td>
+          </tr>
+        </thead>
+
+        <tr *ngFor="let product of selectedProducts">
+          <td class="product-name-decor">{{ product.name }}</td>
+          <td>X {{ product.selectedQuantity }}</td>
+          <td>:{{ product.price * product.selectedQuantity }}</td>
         </tr>
-        <tr>
+        <tr class="underlined">
           <td>Total</td>
           <td></td>
-          <td>{{total}}</td>
+          <td>:{{ total }}</td>
         </tr>
-        <tr>
-          <td>Discunt </td>
+        <tr class="underlined">
+          <td>Discount</td>
           <td></td>
           <td>:10%</td>
         </tr>
-        <tr>
+        <tr class="underlined">
           <td>SUB TOTAL</td>
           <td></td>
-          <td>{{(total/10)*100}}</td>
+          <td>{{ total - 0.1 * total }}</td>
         </tr>
       </table>
     </div>
   </div>
-  <button class="btn btn-lg btn-primary float-left" > Continue Shopping </button>
-  <button class="btn btn-lg btn-info float-right"> Checkout </button>
+  <div class="flexi-container">
+    <button class="btn btn-lg btn-checkout">
+      Continue Shopping
+    </button>
+    <button class="btn btn-lg btn-checkout">
+      Checkout
+    </button>
+  </div>
 </div>
-
 
 <ng-template #showCartEmptyTemplate>
   <div class="cart-empty">
     <h1>Ooops Noting Intresting ???</h1>
-    <button type="button" class="btn btn-primary" routerLink=""> Click Out our Top recommendation !</button>
+    <button type="button" class="btn btn-primary" routerLink="">
+      Click Out our Top recommendation !
+    </button>
   </div>
 </ng-template>

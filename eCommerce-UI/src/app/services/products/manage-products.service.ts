@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductModel } from 'src/app/models/product.model';
 import { StorageService } from '../storage/storage.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +14,16 @@ export class ManageProductsService {
 
   updateCartCount(count: number) {
     this.productSubject.next(count);
+    this.updateCartCountToSs(count);
   }
 
-  // private _products: BehaviorSubject<List<ProductModel>> = new BehaviorSubject([]);
+  updateCartCountToSs(count) {
+    this.store.updateCartCount(count);
+  }
 
-  // public readonly _products: Observable<ProductModel[]> = this._products.asObservable();
+  getCarCount() {
+    return this.store.getCartCount();
+  }
 
   constructor(private store: StorageService) { }
 
@@ -27,16 +31,24 @@ export class ManageProductsService {
     return this.store.getProducts();
   }
 
+  storeProducts(products: [ProductModel]) {
+    return this.store.storeProducts(products);
+  }
+
   addToCart(product: ProductModel) {
     product.quantity = product.quantity - 1;
     product.selectedQuantity = product.selectedQuantity + 1;
-
+    const cartCount = this.getCarCount() + 1;
+    this.updateCartCount(cartCount);
     this.store.updateStore(product);
   }
   removeFromCart(product: ProductModel) {
     product.addedToCart = false;
     product.quantity = product.quantity + 1;
     product.selectedQuantity = product.selectedQuantity - 1;
+
+    const cartCount = this.getCarCount() - 1;
+    this.updateCartCount(cartCount);
 
     this.store.updateStore(product);
   }

@@ -1,0 +1,3 @@
+export const CharacterConstants = { 
+    emptyArrayStr: '[]'
+}

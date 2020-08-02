@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteConstants } from './constants/route.constants';
+import { GlobalConstants } from './constants/global.constants'
 import { ManageProductsService } from './services/products/manage-products.service';
 
 @Component({
@@ -9,13 +10,16 @@ import { ManageProductsService } from './services/products/manage-products.servi
 })
 
 export class AppComponent implements OnInit {
-  RouteConstants = RouteConstants;
-  title = 'eCommerce-UI';
+  routeConstants = RouteConstants;
+  globalConstants = GlobalConstants;
   count = 0;
 
   constructor(private manageProductSvc: ManageProductsService) { }
 
   ngOnInit(): void {
     this.manageProductSvc.cast.subscribe(res => this.count = res);
+    if (this.count === null || this.count === undefined) {
+      this.count = this.manageProductSvc.getCarCount();
+    }
   }
 }

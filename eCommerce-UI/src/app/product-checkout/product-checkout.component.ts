@@ -42,13 +42,12 @@ export class ProductCheckoutComponent implements OnInit {
 
   }
   removeQuantity(product: ProductModel) {
-    if (product.selectedQuantity == 1) {
-      if (this.selectedProducts.length == 1)
+    if (product.selectedQuantity === 1) {
+      if (this.selectedProducts.length === 1)
         this.selectedProducts = [];
       else {
         this.selectedProducts = this.selectedProducts.filter(o => {
-          if(o.id == product.id)
-            return false;
+          return (o.id == product.id);
         });
       }
     }
