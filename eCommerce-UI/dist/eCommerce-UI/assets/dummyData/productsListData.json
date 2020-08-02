@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Prduct- 1",
+        "name": "Prduct-1",
         "price": 123,
         "currency": "INR",
         "photoPath": "assets/dummyData/productImg/jeans3.jpg",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "name": "Prduct- 2",
+        "name": "Prduct-2",
         "price": 222,
         "currency": "INR",
         "photoPath": "assets/dummyData/productImg/jeans3.jpg",
@@ -23,8 +23,8 @@
     },
     {
         "id": 3,
-        "name": "Prduct- 1",
-        "price": 123,
+        "name": "Prduct-3",
+        "price": 323,
         "currency": "INR",
         "photoPath": "assets/dummyData/productImg/jeans3.jpg",
         "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
@@ -34,8 +34,8 @@
     },
     {
         "id": 4,
-        "name": "Prduct- 2",
-        "price": 222,
+        "name": "Prduct-4",
+        "price": 422,
         "currency": "INR",
         "photoPath": "assets/dummyData/productImg/jeans3.jpg",
         "thumbNailPath": "assets/dummyData/productImg/jeans3.jpg",
