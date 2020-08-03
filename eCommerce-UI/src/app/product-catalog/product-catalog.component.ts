@@ -20,16 +20,16 @@ export class ProductCatalogComponent implements OnInit {
   sortingDropDownList = [];
 
   constructor(private apiCall: ApiCallService,
-    private manageProducts: ManageProductsService,
-    private activatedRoute: ActivatedRoute
+              private manageProducts: ManageProductsService,
+              private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.sortingDropDownList = this.globalConstants.sortingDropDownList;
 
     this.activatedRoute.params.subscribe(res => {
-      const searchText = res['searchtext'];
-      if (searchText != undefined && searchText != null && searchText.length > 0) {
+      const searchText = res.searchtext;
+      if (searchText !== undefined && searchText !== null && searchText.length > 0) {
         this.filterProductsTxt(searchText);
       } else {
         this.getAllTheProducts();
@@ -51,7 +51,7 @@ export class ProductCatalogComponent implements OnInit {
     this.productList = this.getAllTheProducts();
     this.productList = this.productList.filter(o => {
       return (o.price <= toRange) ? true : false;
-    })
+    });
   }
 
   getAllTheProducts() {

@@ -8,10 +8,10 @@ export const GlobalConstants = {
 
     page: {
         productCatalog: {
-            title: "Product Catalog"
+            title: 'Product Catalog'
         },
         checkout: {
-            title: "Checkout"
+            title: 'Checkout'
         }
     },
 
@@ -21,8 +21,8 @@ export const GlobalConstants = {
     },
 
     sortingDropDownList: [
-        { "name": "Name Asc", "value": 1 },
-        { "name": "Name Desc", "value": 2 },
-        { "name": "Price HTL", "value": 3 },
-        { "name": "Price LTH", "value": 4 }]
+        { name: 'Name Asc', value: 1 },
+        { name: 'Name Desc', value: 2 },
+        { name: 'Price HTL', value: 3 },
+        { name: 'Price LTH', value: 4 }]
 };

@@ -1,3 +1,3 @@
-export const CharacterConstants = { 
+export const CharacterConstants = {
     emptyArrayStr: '[]'
-}
+};

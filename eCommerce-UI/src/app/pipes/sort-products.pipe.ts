@@ -6,10 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SortProductsPipe implements PipeTransform {
 
   transform(value: unknown, argstr: any): unknown {
-    if (!value || !argstr)
+    if (!value || !argstr) {
       return value;
+    }
 
-    let args = parseInt(argstr); //making sure we comapir with number type
+    const args = parseInt(argstr, 10); // making sure we comapir with number type. The radix is 10 (decimal)
     switch (args) {
       case 1:
       case 2:
@@ -28,17 +29,17 @@ export class SortProductsPipe implements PipeTransform {
 
   }
   filterOnPrice(value, args: number): unknown {
-    if (args === 4) // Price LTH
+    if (args === 4) { // Price LTH
       return value.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0));
-    else
-      return value.sort((a, b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0));
+    }
+    return value.sort((a, b) => (a.price < b.price) ? 1 : ((b.price < a.price) ? -1 : 0));
   }
 
   filterOnName(value, args: number): unknown {
-    if (args === 1) //asc
+    if (args === 1) { // asc
       return value.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
-    else
-      return value.sort((a, b) => (a.name < b.name) ? 1 : ((b.name < a.name) ? -1 : 0));
+    }
+    return value.sort((a, b) => (a.name < b.name) ? 1 : ((b.name < a.name) ? -1 : 0));
   }
 
 }

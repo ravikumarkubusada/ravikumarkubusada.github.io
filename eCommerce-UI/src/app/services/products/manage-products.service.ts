@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { ProductModel } from 'src/app/models/product.model';
 import { StorageService } from '../storage/storage.service';
 /**
@@ -26,7 +26,7 @@ export class ManageProductsService {
     this.productSubject.next(count);
     this.updateCartCountToSs(count);
   }
-  
+
   /**
    *
    *

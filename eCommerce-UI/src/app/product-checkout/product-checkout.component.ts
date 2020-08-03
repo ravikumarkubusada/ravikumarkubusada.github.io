@@ -11,9 +11,9 @@ import { RouteConstants } from '../constants/route.constants';
 export class ProductCheckoutComponent implements OnInit {
   routeConstants = RouteConstants;
   selectedProducts = [];
-  total: number = 0;
+  total = 0;
   /**
-   *Creates an instance of ProductCheckoutComponent.
+   * Creates an instance of ProductCheckoutComponent.
    * @param {ManageProductsService} manageProductSvc
    * @memberof ProductCheckoutComponent
    */
@@ -53,11 +53,11 @@ export class ProductCheckoutComponent implements OnInit {
   removeQuantity(product: ProductModel) {
 
     if (product.selectedQuantity === 1) {
-      if (this.selectedProducts.length === 1)
+      if (this.selectedProducts.length === 1) {
         this.selectedProducts = [];
-      else {
+      } else {
         this.selectedProducts = this.selectedProducts.filter(o => {
-          return !(o.id == product.id);
+          return !(o.id === product.id);
         });
       }
     }

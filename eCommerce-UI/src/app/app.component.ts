@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteConstants } from './constants/route.constants';
-import { GlobalConstants } from './constants/global.constants'
+import { GlobalConstants } from './constants/global.constants';
 import { ManageProductsService } from './services/products/manage-products.service';
 import { Router } from '@angular/router';
 /**
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   searchText = '';
 
   /**
-   *Creates an instance of AppComponent.
+   * Creates an instance of AppComponent.
    * @param {ManageProductsService} manageProductSvc
    * @param {Router} router
    * @memberof AppComponent
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
    * @memberof AppComponent
    */
   searchProducts(searchTxt: string) {
-    if (searchTxt == null || searchTxt == undefined || searchTxt.length == 0) {
+    if (searchTxt == null || searchTxt === undefined || searchTxt.length === 0) {
       this.router.navigateByUrl('');
     }
 

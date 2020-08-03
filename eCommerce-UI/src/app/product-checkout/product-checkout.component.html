@@ -7,11 +7,13 @@
             <td>{{ product.name }}</td>
             <td>
               <button class="btn btn-sm btn-outline-primary" type="button" (click)="removeQuantity(product)"
-              [disabled] = "product.selectedQuantity ==0">
+                [disabled]="product.selectedQuantity ==0">
                 <i class="fa fa-minus" aria-hidden="true"></i>
               </button>
-              <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10" />
-              <button class="btn btn-sm btn-outline-primary" type="button" (click)="addQuantity(product)" [disabled]="product.quantity == 0">
+              <input type="number" name="count" id="count" [(ngModel)]="product.selectedQuantity" min="1" max="10"
+                readonly />
+              <button class="btn btn-sm btn-outline-primary" type="button" (click)="addQuantity(product)"
+                [disabled]="product.quantity == 0">
                 <i class="fa fa-plus" aria-hidden="true"></i>
               </button>
             </td>
@@ -51,12 +53,16 @@
     </div>
   </div>
   <div class="flexi-container">
-    <button class="btn btn-lg btn-primary" routerLink="{{routeConstants.routeToProductCatalog}}">
-      Continue Shopping
-    </button>
-    <button class="btn btn-lg btn-primary">
-      Checkout
-    </button>
+    <div>
+      <button class="btn btn-lg btn-primary" routerLink="{{routeConstants.routeToProductCatalog}}">
+        Continue Shopping
+      </button>
+    </div>
+    <div>
+      <button class="btn btn-lg btn-primary">
+        Checkout
+      </button>
+    </div>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductModel } from 'src/app/models/product.model';
 import { SessionstorageKeys } from './sessionstorageKeys';
-import { CharacterConstants } from './../../constants/character.constants'
+import { CharacterConstants } from './../../constants/character.constants';
 
 @Injectable({
   providedIn: 'root'

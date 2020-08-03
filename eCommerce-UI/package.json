@@ -1,10 +1,10 @@
 {
-  "name": "e-commerce-ui",
+  "name": "BikerZone",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng lint --fix && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
